@@ -1,6 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="712" height="162">
 
 <style type="text/css">
+
+	@font-face {
+	font-family: "HelveticaNeuePro";
+	src: url('fonts/HelveticaNeueLTPro-Th.woff');
+	}
+	@font-face {
+	font-family: "HelveticaNeueProMd";
+	src: url('fonts/HelveticaNeueLTPro-Md.woff');
+	}
+	@font-face {
+	font-family: "FuturaStd-Bold";
+	src: url('fonts/FuturaStd-Bold.woff');
+	}
+	@font-face {
+	font-family: "FuturaHeavy";
+	src: url('fonts/FuturaStd-Heavy.woff');
+	}
+	@font-face {
+	font-family: "FuturaMedium";
+	src: url('fonts/FuturaStd-Medium.woff');
+	}
+	@font-face {
+	font-family: "FuturaStd-Book";
+	src: url('fonts/FuturaStd-Book.woff');
+	}
+	@font-face {
+	font-family: "FuturaLight";
+	src: url('fonts/FuturaStd-Light.woff');
+	}
 	.st0{fill:#FFFFFF;}
 	.st1{fill:#3A5595;}
 	.st2{fill:#2693C9;}
@@ -13,9 +42,9 @@
 	.st9{fill:none;stroke:#002F5D;stroke-width:1.2164;stroke-miterlimit:10;}
 	.st10{fill:none;}
 	.st11{fill:#002C59;}
-	.st12{font-family:'FuturaBook';}
+	.st12{font-family:'FuturaStd-Book';}
 	.st13{font-size:14.7446px;}
-	.st14{font-family:'FuturaBold';}
+	.st14{font-family:'FuturaStd-Bold';}
 	.st15{font-size:27.7978px;}
 	.st16{fill:#6F7072;}
 	.st17{fill-rule:evenodd;clip-rule:evenodd;fill:#002C59;}

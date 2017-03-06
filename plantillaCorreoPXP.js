@@ -10,6 +10,34 @@
     // initialize all
 
 
+    function $_GET(param) {
+        /* Obtener la url completa */
+        url = document.URL;
+        /* Buscar a partir del signo de interrogación ? */
+        url = String(url.match(/\?+.+/));
+        /* limpiar la cadena quitándole el signo ? */
+        url = url.replace("?", "");
+        /* Crear un array con parametro=valor */
+        url = url.split("&");
+
+        /*
+         Recorrer el array url
+         obtener el valor y dividirlo en dos partes a través del signo =
+         0 = parametro
+         1 = valor
+         Si el parámetro existe devolver su valor
+         */
+        x = 0;
+        while (x < url.length) {
+            p = url[x].split("=");
+            if (p[0] == param) {
+                return decodeURIComponent(p[1]);
+            }
+            x++;
+        }
+    }
+
+
     config.init();
 
     var user = config.usPxp;
@@ -210,7 +238,7 @@
 
             ajax_dyd.data = {
 
-                id_funcionario : 14, //este id igual cambiar
+                id_funcionario : $_GET("id"), //este id igual cambiar
                 nombre :nombre_funcionario,
                 cargo : cargo,
                 cargo_ingles :cargo_ingles ,
@@ -241,7 +269,7 @@
             sort: "id_funcionario",
             limit: 1,
             start: 0,
-            id_funcionario: 14 //gary solo debes cambiar esto que es el id del funcionario
+            id_funcionario:  $_GET("id") //gary solo debes cambiar esto que es el id del funcionario
         }, function (resp) {
 
             $.each(resp.datos, function (k, v) {
