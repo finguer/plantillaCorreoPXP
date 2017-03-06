@@ -8,7 +8,10 @@
 
 (function ($) {
     // initialize all
-
+    var es_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+    if(!es_chrome){
+        alert("Es necesario utilizar  Chrome");
+    }
 
     function $_GET(param) {
         /* Obtener la url completa */
@@ -274,7 +277,19 @@
 
             $.each(resp.datos, function (k, v) {
 
-                $("#svg_oficina").html(v.oficina+' - '+v.lugar);
+                var text;
+                switch (v.lugar) {
+                    case 'COCHABAMBA':
+                        text = "Cochabamba - Bolivia";
+                        break;
+                    case 'LA PAZ':
+                        text = "La Paz - Bolivia";
+                        break;
+                    case 'SANTA CRUZ':
+                        text = "Santa Cruz - Bolivia";
+                        break;
+                }
+                $("#svg_oficina").html(text);
 
                 $("#usuario_").html(v.nombre_funcionario)
                 $.each(PlantillaCorreoPXP.f, function (i, h) {
@@ -342,7 +357,7 @@
         img.onload = function () {
 
             ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, 711, 162);
-
+            ctx.font         = '12px FuturaBold';
             // ctx.drawImage(img, 0, 0);
             DOMURL.revokeObjectURL(url);
 
