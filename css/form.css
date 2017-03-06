@@ -688,9 +688,10 @@
 .input__field--sae {
     background: transparent;
     width: 100%;
-    color: #fff;
+    color: #111111;
     padding: 1em 0 0.5em;
     font-weight: 500;
+    border-bottom: 1px solid #111111;
 }
 
 .input__label--sae {
@@ -722,7 +723,7 @@
     font-size: 1em;
     opacity: 0.5;
     left: -30px;
-    color: #fff;
+    color: #111111;
     pointer-events: none;
     -webkit-transform: translate3d(205px, 0, 0);
     transform: translate3d(205px, 0, 0);
