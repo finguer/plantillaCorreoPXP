@@ -15,12 +15,43 @@
 .clearfix:before, .clearfix:after { content: ''; display: table; }
 .clearfix:after { clear: both; }
 
+
+@font-face {
+    font-family: "HelveticaNeuePro";
+    src: url('../fonts/HelveticaNeueLTPro-Th.woff');
+}
+@font-face {
+    font-family: "HelveticaNeueProMd";
+    src: url('../fonts/HelveticaNeueLTPro-Md.woff');
+}
+@font-face {
+    font-family: "FuturaBold";
+    src: url('../fonts/FuturaStd-Bold.woff');
+}
+@font-face {
+    font-family: "FuturaHeavy";
+    src: url('../fonts/FuturaStd-Heavy.woff');
+}
+@font-face {
+    font-family: "FuturaMedium";
+    src: url('../fonts/FuturaStd-Medium.woff');
+}
+@font-face {
+    font-family: "FuturaBook";
+    src: url('../fonts/FuturaStd-Book.woff');
+}
+@font-face {
+    font-family: "FuturaLight";
+    src: url('../fonts/FuturaStd-Light.woff');
+}
+
+
 body {
     background: #8781bd;
     color: #404d5b;
     font-weight: 500;
     font-size: 1.05em;
-    font-family: 'Raleway', Arial, sans-serif;
+    /*font-family: 'Raleway', Arial, sans-serif;*/
 }
 
 a {

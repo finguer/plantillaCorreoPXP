@@ -161,6 +161,7 @@
             $("#svg_nombre_funcionario").html($("#nombre_funcionario").val());
             $("#svg_cargo").html($("#cargo").val());
             $("#svg_cargo_ingles").html($("#cargo_ingles").val());
+            $("#svg_direccion").html($("#direccion").val());
             //telefono_interno//telefonos_corporativos//celular1
             var telefonos = '';
             if($("#telefono_interno").val() != ''){
@@ -194,6 +195,40 @@
                 //telefonos transform="matrix(1 0 0 1 219.6667 108.1038)"
             }
 
+        },
+        insertarLogGeneracionFirmaCorreo:function () {
+
+            var nombre_funcionario = $("#nombre_funcionario").val();
+            var cargo = $("#cargo").val();
+            var cargo_ingles = $("#cargo_ingles").val();
+            var direccion = $("#direccion").val();
+
+
+            var telefono_interno = $("#telefono_interno").val();
+            var telefono_corporativo = $("#telefonos_corporativos").val();
+            var telefono_personal = $("#celular1").val();
+
+            ajax_dyd.data = {
+
+                id_funcionario : 14, //este id igual cambiar
+                nombre :nombre_funcionario,
+                cargo : cargo,
+                cargo_ingles :cargo_ingles ,
+                direccion : direccion,
+                telefono_interno :telefono_interno ,
+                telefono_corporativo :telefono_corporativo ,
+                telefono_personal : telefono_personal
+            };
+            ajax_dyd.type = 'POST';
+            ajax_dyd.url = 'pxp/lib/rest/organigrama/LogGeneracionFirmaCorreo/insertarLogGeneracionFirmaCorreo';
+            ajax_dyd.dataType = 'json';
+            ajax_dyd.async = true;
+            ajax_dyd.peticion_ajax(function (resp) {
+
+                console.log(resp)
+                if (typeof callback === "function") callback(resp);
+            });
+            
         }
 
     };
@@ -256,19 +291,23 @@
     $(".descargar").click(function () {
 
         PlantillaCorreoPXP.actualizarPlantillaSvg();
-        
+        PlantillaCorreoPXP.insertarLogGeneracionFirmaCorreo();
+
         var svg = document.querySelector('svg');
 
         console.log('svg', svg)
 
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');
+
         var data = (new XMLSerializer()).serializeToString(svg);
         var DOMURL = window.URL || window.webkitURL || window;
 
         var img = new Image();
         var svgBlob = new Blob([data], {type: 'image/svg+xml;charset=utf-8'});
         var url = DOMURL.createObjectURL(svgBlob);
+
+        console.log(canvas)
 
         console.log(img.width + ',' + img.height)
 
@@ -288,6 +327,21 @@
 
         img.src = url;
 
+    });
+    $(".container").click(function () {
+
+        //esta activo
+        tamanio = "1px";
+        $(".footer_").removeClass('active');
+
+        $(".footer_").animate({
+
+            height: tamanio
+        }, {
+            step: function (now, fx) {
+
+            }
+        });
     });
 
 
