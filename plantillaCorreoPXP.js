@@ -13,6 +13,9 @@
         alert("Es necesario utilizar  Chrome");
     }
 
+
+
+
     function $_GET(param) {
         /* Obtener la url completa */
         url = document.URL;
@@ -189,9 +192,9 @@
 
         actualizarPlantillaSvg:function () {
 
-            $("#svg_nombre_funcionario").html($("#nombre_funcionario").val());
-            $("#svg_cargo").html($("#cargo").val());
-            $("#svg_cargo_ingles").html($("#cargo_ingles").val());
+            $("#svg_nombre_funcionario").html($("#nombre_funcionario").val().toUpperCase());
+            $("#svg_cargo").html($("#cargo").val().toUpperCase());
+            $("#svg_cargo_ingles").html($("#cargo_ingles").val().toUpperCase());
             $("#svg_direccion").html($("#direccion").val());
             //telefono_interno//telefonos_corporativos//celular1
             var telefonos = '';
@@ -243,8 +246,8 @@
 
                 id_funcionario : $_GET("id"), //este id igual cambiar
                 nombre :nombre_funcionario,
-                cargo : cargo,
-                cargo_ingles :cargo_ingles ,
+                cargo : cargo.toUpperCase(),
+                cargo_ingles :cargo_ingles.toUpperCase() ,
                 direccion : direccion,
                 telefono_interno :telefono_interno ,
                 telefono_corporativo :telefono_corporativo ,
@@ -265,44 +268,79 @@
     };
     PlantillaCorreoPXP.dib();
 
-    $("#plantilla").load("plantilla_boa_correo.svg", function (response) {
+    /*$("#plantilla").load("plantilla_boa_correo.svg", function (response) {
 
 
-        PlantillaCorreoPXP.obtenerFuncionario({
-            sort: "id_funcionario",
-            limit: 1,
-            start: 0,
-            id_funcionario:  $_GET("id") //gary solo debes cambiar esto que es el id del funcionario
-        }, function (resp) {
-
-            $.each(resp.datos, function (k, v) {
-
-                var text;
-                switch (v.lugar) {
-                    case 'COCHABAMBA':
-                        text = "Cochabamba - Bolivia";
-                        break;
-                    case 'LA PAZ':
-                        text = "La Paz - Bolivia";
-                        break;
-                    case 'SANTA CRUZ':
-                        text = "Santa Cruz - Bolivia";
-                        break;
-                }
-                $("#svg_oficina").html(text);
-
-                $("#usuario_").html(v.nombre_funcionario)
-                $.each(PlantillaCorreoPXP.f, function (i, h) {
-                    $("#" + h.n).val(v[h.n]);
-                    $("#svg_" + h.n).html(v[h.n]);
 
 
-                });
+    });*/
+
+    PlantillaCorreoPXP.obtenerFuncionario({
+        sort: "id_funcionario",
+        limit: 1,
+        start: 0,
+        id_funcionario:  $_GET("id") //gary solo debes cambiar esto que es el id del funcionario
+    }, function (resp) {
+
+        $.each(resp.datos, function (k, v) {
+
+            var text;
+            switch (v.lugar) {
+                case 'COCHABAMBA':
+                    text = "Cochabamba - Bolivia";
+                    break;
+                case 'LA PAZ':
+                    text = "La Paz - Bolivia";
+                    break;
+                case 'SANTA CRUZ':
+                    text = "Santa Cruz - Bolivia";
+                    break;
+                case 'TARIJA':
+                    text = "Tarija - Bolivia";
+                    break;
+                case 'COBIJA':
+                    text = "Pando - Bolivia";
+                    break;
+                case 'TRINIDAD':
+                    text = "Beni - Bolivia";
+                    break;
+                case 'SUCRE':
+                    text = "Sucre - Bolivia";
+                    break;
+                case 'POTOSI':
+                    text = "Potosi - Bolivia";
+                    break;
+                case 'UYUNI':
+                    text = "Potosi - Bolivia";
+                    break;
+                case 'CHIMORE':
+                    text = "Cochabamba - Bolivia";
+                    break;
+                case 'SALTA':
+                    text = "Salta - Argentina";
+                    break;
+                case 'BUENOS AIRES':
+                    text = "Buenos Aires - Argentina";
+                    break;
+                case 'MIAMI':
+                    text = "Miami - E.E.U.U.";
+                    break;
+                case 'MADRID':
+                    text = "Madrid - España";
+                    break;
+            }
+            $("#svg_oficina").html(text);
+
+            $("#usuario_").html(v.nombre_funcionario)
+            $.each(PlantillaCorreoPXP.f, function (i, h) {
+                $("#" + h.n).val(v[h.n]);
+                $("#svg_" + h.n).html(v[h.n]);
 
 
             });
-        });
 
+
+        });
     });
 
 
@@ -336,13 +374,48 @@
         PlantillaCorreoPXP.actualizarPlantillaSvg();
         PlantillaCorreoPXP.insertarLogGeneracionFirmaCorreo();
 
-        var svg = document.querySelector('svg');
+
+        require([
+            "Kendo/kendo.dataviz.chart.min",
+            "Kendo/kendo.drawing.min",
+            "Kendo/kendo.pdf.min",
+
+        ], function () {
+
+            console.log('termino')
+
+
+                // Convert the DOM element to a drawing using kendo.drawing.drawDOM
+                kendo.drawing.drawDOM($("#exportar"))
+                    .then(function(group) {
+                        // Render the result as a PNG image
+                        console.log(group)
+                        group.transform(
+                            kendo.geometry.transform().scale(1, 1)
+                        );
+                        return kendo.drawing.exportImage(group);
+                    })
+                    .done(function(data) {
+                        // Save the image file
+                        kendo.saveAs({
+                            dataURI: data,
+                            fileName: "firma_correo.png",
+                            proxyURL: "https://demos.telerik.com/kendo-ui/service/export"
+                        });
+                    });
+
+
+
+
+        })
+
+        /*var svg = document.querySelector('svg');
 
         console.log('svg', svg)
 
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');
-
+        ctx.font         = '"FuturaStd-Bold"';
         var data = (new XMLSerializer()).serializeToString(svg);
         var DOMURL = window.URL || window.webkitURL || window;
 
@@ -357,7 +430,7 @@
         img.onload = function () {
 
             ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, 711, 162);
-            ctx.font         = '12px FuturaBold';
+
             // ctx.drawImage(img, 0, 0);
             DOMURL.revokeObjectURL(url);
 
@@ -368,7 +441,7 @@
             PlantillaCorreoPXP.triggerDownload(imgURI);
         };
 
-        img.src = url;
+        img.src = url;*/
 
     });
     $(".container").click(function () {

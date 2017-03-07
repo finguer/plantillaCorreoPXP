@@ -17,11 +17,11 @@
         tipo_ruta:'IP', //PUEDE IR DOMINIO
         host : 'http://disydes.com/',
         usPxp:'admin', //usuario pxp
-        pwdPxp: '202cb962ac59075b964b07152d234b70',//'c36becaecef0685b4b6f722b05fd6427', //md5
+        pwdPxp: 'cda47bf12c43a24d1b2af7014c012357',//'c36becaecef0685b4b6f722b05fd6427', //md5
         //123 = 202cb962ac59075b964b07152d234b70
         //root cda47bf12c43a24d1b2af7014c012357
 
-        IP : {ip:"172.17.45.229",carpeta:"kerp_capacitacion"},
+        IP : {ip:"172.17.45.229",carpeta:"kerp"},
         DOMINIO : {url:"disydes.com"},
         ruta_servicio : '',
 

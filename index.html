@@ -20,6 +20,32 @@
             font-family: 'FuturaBold';
         }
 
+        #plantilla{
+            background-image: url("plantilla_boa_correo.jpg");
+            width: 712px;
+            min-height: 142px;
+            max-height: 214px;
+            display: block;
+        }
+        #pie_plantilla{
+            background-image: url("plantilla_boa_correo_pie.jpg");
+            width: 712px;
+            height: 32px;
+
+
+        }
+
+        #svg_nombre_funcionario{
+            font-family: 'FuturaBold' ;
+        }
+        #svg_cargo{
+            font-family: 'FuturaBook' ;
+        }
+        #svg_direccion,#svg_telefonos,#svg_oficina{
+            font-family: 'FuturaBook' ;
+            color: #6F7072;
+        }
+
     </style>
 </head>
 <body style="background-color: #ffffff;">
@@ -48,13 +74,31 @@
     <div class="footer_"
          style="height: 1px; width: 100%; background-color: #404d5b; position:fixed; bottom: 0; z-index: 50000; color:#ffffff;">
 
-        <div id="plantilla"></div>
+        <div style="font-family: FuturaBold"></div>
+        <div id="exportar">
+            <div id="plantilla" style="background-color: #ffffff;">
+                <div style="width: 490px; margin-top: 5px; padding-top: 20px; margin-left: 215px; border-left: 2px solid #002C59; padding-left: 10px;  ">
+                    <div id="svg_nombre_funcionario" style="color: #002C59; font-size: 27px;">GONZALO MAYORGA</div>
+                    <div id="svg_cargo" style="color: #002C59; font-size: 14px;">GONZALO MAYORGA</div>
+                    <div id="svg_cargo_ingles" style="color: #002C59; font-size: 14px;"></div>
+                    <div id="svg_direccion" style=" font-size: 14px;"></div>
+                    <div id="svg_telefonos" style=" font-size: 14px;"></div>
+                    <div id="svg_oficina" style="font-size: 14px;"></div>
+                </div>
+                <div id="pie_plantilla" style="width: 712px; display: block;">
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
 </div>
 
 
-<canvas id="canvas"  style="display: none;" width=712 height=162></canvas>
+<canvas id="canvas"  style="display: none; font-family: FuturaBold" width=712 height=162></canvas>
 
 
 
@@ -67,7 +111,27 @@
 
 <script src="plantillaCorreoPXP.js"></script>
 <script src="js/classie.js"></script>
+
+<script src="require.js"></script>
 <script>
+
+    (function ($) {
+        // initialize all
+
+        requirejs.config({
+            //enforceDefine: true, //esta linea sirve para  IE
+            paths: {
+                //Kendo: "KendoUIProfessional/content/Scripts/kendo/2015.2.624",
+                Kendo: "KendoUIProfessional/content/Scripts/kendo/2015.2.624"
+
+            }
+        });
+
+
+
+
+    })
+    (jQuery);
     /*(function() {
         // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
         if (!String.prototype.trim) {

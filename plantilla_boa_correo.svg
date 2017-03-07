@@ -1,35 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="712" height="162">
-
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 712 162" style="enable-background:new 0 0 712 162;" xml:space="preserve">
 <style type="text/css">
-
-	@font-face {
-	font-family: "HelveticaNeuePro";
-	src: url('fonts/HelveticaNeueLTPro-Th.woff');
-	}
-	@font-face {
-	font-family: "HelveticaNeueProMd";
-	src: url('fonts/HelveticaNeueLTPro-Md.woff');
-	}
-	@font-face {
-	font-family: "FuturaStd-Bold";
-	src: url('fonts/FuturaStd-Bold.woff');
-	}
-	@font-face {
-	font-family: "FuturaHeavy";
-	src: url('fonts/FuturaStd-Heavy.woff');
-	}
-	@font-face {
-	font-family: "FuturaMedium";
-	src: url('fonts/FuturaStd-Medium.woff');
-	}
-	@font-face {
-	font-family: "FuturaStd-Book";
-	src: url('fonts/FuturaStd-Book.woff');
-	}
-	@font-face {
-	font-family: "FuturaLight";
-	src: url('fonts/FuturaStd-Light.woff');
-	}
 	.st0{fill:#FFFFFF;}
 	.st1{fill:#3A5595;}
 	.st2{fill:#2693C9;}
@@ -149,17 +122,17 @@
 </g>
 <line class="st9" x1="211.9" y1="8" x2="211.9" y2="117.9"/>
 <rect x="218" y="39" class="st10" width="493" height="16.7"/>
-<text id="svg_cargo" transform="matrix(1 0 0 1 218 51.1436)" class="st11 st12 st13">GERENTE ADMINISTRATIVO FINANCIERO esp</text>
+<text transform="matrix(1 0 0 1 218 51.1436)" class="st11 st12 st13">GERENTE ADMINISTRATIVO FINANCIERO</text>
 <rect x="218" y="58.7" class="st10" width="493" height="16.7"/>
-<text id="svg_cargo_ingles" transform="matrix(1 0 0 1 218 70.8895)" class="st11 st12 st13">GERENTE ADMINISTRATIVO FINANCIERO ingles</text>
+<text transform="matrix(1 0 0 1 218 70.8895)" class="st11 st12 st13">GERENTE ADMINISTRATIVO FINANCIERO</text>
 <rect x="218.3" y="9.6" class="st10" width="492.3" height="29.3"/>
-<text id="svg_nombre_funcionario" transform="matrix(0.9542 0 0 1 218.3332 32.7178)" class="st11 st14 st15">GONZALO MAYORGA</text>
+<text transform="matrix(0.9542 0 0 1 218.3332 32.7178)" class="st11 st14 st15">GONZALO MAYORGA</text>
 <rect x="219.7" y="76" class="st10" width="488.7" height="17.3"/>
-<text id="svg_direccion" transform="matrix(1 0 0 1 219.6667 88.1434)" class="st16 st12 st13">Av. Simón López 1582 Tel. 591 (4) 4140873</text>
+<text transform="matrix(1 0 0 1 219.6667 88.1434)" class="st16 st12 st13">Av. Simón López 1582 Tel. 591 (4) 4140873</text>
 <rect x="219.7" y="95.9" class="st10" width="488.7" height="17.3"/>
-<text id="svg_telefonos" transform="matrix(1 0 0 1 219.6667 108.1038)" class="st16 st12 st13">Int. 123 Cel. 72202121</text>
+<text transform="matrix(1 0 0 1 219.6667 108.1038)" class="st16 st12 st13">Int. 123 Cel. 72202121</text>
 <rect x="219.7" y="115.9" class="st10" width="488.7" height="17.3"/>
-<text id="svg_oficina" transform="matrix(1 0 0 1 219.6667 128.0642)" class="st16 st12 st13">Cochabamba - Bolivia</text>
+<text transform="matrix(1 0 0 1 219.6667 128.0642)" class="st16 st12 st13">Cochabamba - Bolivia</text>
 <g>
 	<path class="st17" d="M144.8,68.6c-21.8,24-5.6,6.2-29.4,32.3h-5.6l30.8-33.8c2.5-2.7,0.3-2.8,0.1-2.8l-1.9,0l2-2.2l9.1,0
 		c2.2,0,2.8,0.3,3.1,2.2l4.7,36.6H149C146.7,81.7,147.8,91,144.8,68.6z"/>

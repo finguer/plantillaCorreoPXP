@@ -26,9 +26,7 @@
 }
 @font-face {
     font-family: "FuturaBold" ;
-    src: url('../fonts/FuturaStd-Bold.woff') format('embedded-opentype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('../fonts/FuturaStd-Bold.woff');
 }
 @font-face {
     font-family: "FuturaHeavy";
@@ -40,7 +38,7 @@
 }
 @font-face {
     font-family: "FuturaBook";
-    src: url('../fonts/FuturaStd-Book.woff') format('embedded-opentype');
+    src: url('../fonts/FuturaStd-Book.woff');
 }
 @font-face {
     font-family: "FuturaLight";
