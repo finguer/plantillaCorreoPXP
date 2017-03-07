@@ -106,7 +106,7 @@
                 n: "telefono_interno",
                 t: "text"
             }, {
-                field: "Telefono Corporativo",
+                field: "Cel.",
                 mensaje: "",
                 n: "telefonos_corporativos",
                 t: "text"
