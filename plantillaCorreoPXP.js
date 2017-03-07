@@ -73,7 +73,12 @@
              },*/{
                 field: "Nombre",
                 mensaje: "solo uno, el mas usado",
-                n: "nombre_funcionario",
+                n: "nombre",
+                t: "text"
+            }, {
+                field: "Apellido1",
+                mensaje: "solo uno, el mas usado",
+                n: "apellido",
                 t: "text"
             }, {
                 field: "Cargo",
@@ -84,11 +89,6 @@
                 field: "Cargo Ingles",
                 mensaje: "",
                 n: "cargo_ingles",
-                t: "text"
-            }, {
-                field: "Gerencia",
-                mensaje: "",
-                n: "gerencia",
                 t: "text"
             },/* {
                 field: "Regional",
@@ -111,11 +111,16 @@
                 n: "telefonos_corporativos",
                 t: "text"
             }, {
+                field: "Fax",
+                mensaje: "",
+                n: "fax",
+                t: "text"
+            },/* {
                 field: "Telefono Personal",
                 mensaje: "Opcional",
                 n: "celular1",
                 t: "text"
-            }
+            }*/
         ],
 
 
@@ -192,7 +197,7 @@
 
         actualizarPlantillaSvg:function () {
 
-            $("#svg_nombre_funcionario").html($("#nombre_funcionario").val().toUpperCase());
+            $("#svg_nombre_funcionario").html($("#nombre").val().toUpperCase() +' '+$("#apellido").val().toUpperCase());
             $("#svg_cargo").html($("#cargo").val().toUpperCase());
             $("#svg_cargo_ingles").html($("#cargo_ingles").val().toUpperCase());
             $("#svg_direccion").html($("#direccion").val());
@@ -200,34 +205,26 @@
             var telefonos = '';
             if($("#telefono_interno").val() != ''){
 
-                telefonos+=' Int. '+$("#telefono_interno").val();
+                telefonos+=' Telf. '+$("#telefono_interno").val();
             }
 
+            var cel = '';
             if($("#telefonos_corporativos").val() != ''){
 
-                telefonos+=' Corporativo. '+$("#telefonos_corporativos").val();
+                cel+=' Cel. '+$("#telefonos_corporativos").val();
             }
+            $("#svg_cel").html(cel);
 
+            var fax = '';
+            if($("#fax").val() != ''){
 
-            if($("#celular1").val() != ''){
-
-                telefonos+=' Cel. '+$("#celular1").val();
+                fax+=' Fax. '+$("#fax").val();
             }
+            $("#svg_fax").html(fax);
+
 
             $("#svg_telefonos").html(telefonos);
-            //existe cargo en ingles
-            if ($("#cargo_ingles").val() != '') {
-                $("#svg_direccion").attr('transform', 'matrix(1 0 0 1 219.6667 88.1434)');
-                $("#svg_telefonos").attr('transform', 'matrix(1 0 0 1 219.6667 108.1038)');
-                $("#svg_oficina").attr('transform', 'matrix(1 0 0 1 219.6667 128.0642)');
-            } else {
-                //direccion debe subir transform="matrix(1 0 0 1 219.6667 70.1434)"
-                $("#svg_direccion").attr('transform', 'matrix(1 0 0 1 219.6667 70.1434)');
-                $("#svg_telefonos").attr('transform', 'matrix(1 0 0 1 219.6667 90.1434)');
-                $("#svg_oficina").attr('transform', 'matrix(1 0 0 1 219.6667 110.0642)');
 
-                //telefonos transform="matrix(1 0 0 1 219.6667 108.1038)"
-            }
 
         },
         insertarLogGeneracionFirmaCorreo:function () {
