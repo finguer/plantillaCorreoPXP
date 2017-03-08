@@ -328,7 +328,7 @@
             }
             $("#svg_oficina").html(text);
 
-            $("#usuario_").html(v.nombre_funcionario)
+            $("#usuario_").html(v.nombre_funcionario);
             $.each(PlantillaCorreoPXP.f, function (i, h) {
                 $("#" + h.n).val(v[h.n]);
                 $("#svg_" + h.n).html(v[h.n]);
