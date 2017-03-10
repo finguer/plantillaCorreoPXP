@@ -10,7 +10,6 @@
     // initialize all
     var es_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
     if(!es_chrome){
-        alert("Es necesario utilizar  Chrome");
     }
 
 
