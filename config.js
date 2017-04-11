@@ -14,7 +14,7 @@
 
     config = {
 
-        tipo_ruta:'IP', //PUEDE IR DOMINIO
+        tipo_ruta:'DOMINIO', //PUEDE IR DOMINIO
         host : 'http://disydes.com/',
         usPxp:'admin', //usuario pxp
         pwdPxp: 'cda47bf12c43a24d1b2af7014c012357',//'c36becaecef0685b4b6f722b05fd6427', //md5
@@ -22,7 +22,7 @@
         //root cda47bf12c43a24d1b2af7014c012357
 
         IP : {ip:"172.17.45.229",carpeta:"kerp"},
-        DOMINIO : {url:"disydes.com"},
+        DOMINIO : {url:"erp.obairlines.bo"},
         ruta_servicio : '',
 
 
