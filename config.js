@@ -16,13 +16,13 @@
 
         tipo_ruta:'DOMINIO', //PUEDE IR DOMINIO
         host : 'http://disydes.com/',
-        usPxp:'admin', //usuario pxp
-        pwdPxp: 'cda47bf12c43a24d1b2af7014c012357',//'c36becaecef0685b4b6f722b05fd6427', //md5
+        usPxp:'webfirma', //usuario pxp
+        pwdPxp: '8e3a7a8e6c441a34f11d53b7ca6aeb19',//'c36becaecef0685b4b6f722b05fd6427', //md5
         //123 = 202cb962ac59075b964b07152d234b70
         //root cda47bf12c43a24d1b2af7014c012357
 
         IP : {ip:"172.17.45.229",carpeta:"kerp"},
-        DOMINIO : {url:"erp.obairlines.bo"},
+        DOMINIO : {url:"erpmobile.obairlines.bo"},
         ruta_servicio : '',
 
 

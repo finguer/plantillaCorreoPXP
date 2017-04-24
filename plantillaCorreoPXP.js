@@ -114,6 +114,11 @@
                 mensaje: "",
                 n: "fax",
                 t: "text"
+            }, {
+                field: "Lugar",
+                mensaje: "",
+                n: "lugar",
+                t: "text"
             },/* {
                 field: "Telefono Personal",
                 mensaje: "Opcional",
@@ -168,7 +173,7 @@
 
             ajax_dyd.data = parametros;
             ajax_dyd.type = 'POST';
-            ajax_dyd.url = 'pxp/lib/rest/organigrama/Funcionario/getDatosFuncionario';
+            ajax_dyd.url = 'rest/organigrama/Funcionario/getDatosFuncionario';
             ajax_dyd.dataType = 'json';
             ajax_dyd.async = true;
             ajax_dyd.peticion_ajax(function (resp) {
@@ -200,6 +205,7 @@
             $("#svg_cargo").html($("#cargo").val().toUpperCase());
             $("#svg_cargo_ingles").html($("#cargo_ingles").val().toUpperCase());
             $("#svg_direccion").html($("#direccion").val());
+            $("#svg_oficina").html($("#lugar").val());
             //telefono_interno//telefonos_corporativos//celular1
             var telefonos = '';
             if($("#telefono_interno").val() != ''){
@@ -250,7 +256,7 @@
                 telefono_personal : telefono_personal
             };
             ajax_dyd.type = 'POST';
-            ajax_dyd.url = 'pxp/lib/rest/organigrama/LogGeneracionFirmaCorreo/insertarLogGeneracionFirmaCorreo';
+            ajax_dyd.url = 'rest/organigrama/LogGeneracionFirmaCorreo/insertarLogGeneracionFirmaCorreo';
             ajax_dyd.dataType = 'json';
             ajax_dyd.async = true;
             ajax_dyd.peticion_ajax(function (resp) {
@@ -331,6 +337,10 @@
             $.each(PlantillaCorreoPXP.f, function (i, h) {
                 $("#" + h.n).val(v[h.n]);
                 $("#svg_" + h.n).html(v[h.n]);
+
+                if(h.n == 'lugar'){
+                    $("#" + h.n).val(text);
+                }
 
 
             });
