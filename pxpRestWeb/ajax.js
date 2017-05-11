@@ -34,7 +34,7 @@
         async:true,
 
         headers:clientRestPxp._headers,
-        timeout_:3000,
+        timeout_:10000,
         countError:0,
 
 

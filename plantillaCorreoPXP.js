@@ -397,7 +397,7 @@
                         // Render the result as a PNG image
                         console.log(group)
                         group.transform(
-                            kendo.geometry.transform().scale(1, 1)
+                            kendo.geometry.transform().scale(0.7, 0.7)
                         );
                         return kendo.drawing.exportImage(group);
                     })
